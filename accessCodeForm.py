@@ -8,7 +8,6 @@
 # WARNING! All changes made in this file will be lost!
 
 import os
-
 from PySide2 import QtCore, QtGui,QtWidgets
 from PySide2.QtWidgets import QDialog
 class Ui_Dialog(object):
@@ -19,7 +18,6 @@ class Ui_Dialog(object):
         print("==============----------------DIALOG MAKING ACCESSCODE")
         Dialog.setObjectName("Dialog")
         Dialog.resize(500, 200)
-
         Dialog.setMaximumSize(500,200)
         Dialog.setStyleSheet("background-color:white;")
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Maximum, QtWidgets.QSizePolicy.Maximum)
@@ -42,10 +40,12 @@ class Ui_Dialog(object):
         # Dialog.setPalette(background_palette)
         # Dialog.setStyleSheet(
         #     "background-color: #E6232C, color:#000;")
+
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         spacerItem = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout_2.addItem(spacerItem)
+
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.label = QtWidgets.QLabel(Dialog)
@@ -130,9 +130,6 @@ class Ui_Dialog(object):
         self.verticalLayout_2.addLayout(self.verticalLayout)
         self.retranslateUi(Dialog)
         #QtCore.QMetaObject.connectSlotsByName(Dialog)
-        Dialog.setFocus()
-        Dialog.setModal(True)
-        Dialog.show()
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QtWidgets.QApplication.translate("Dialog", "Dialog", None))

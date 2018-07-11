@@ -7,8 +7,10 @@
 #
 # WARNING! All changes made in this file will be lost!
 import os
-from PySide2 import QtCore, QtGui,QtWidgets
+from PySide2 import QtCore, QtGui, QtWidgets
 import base64
+
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         print("==================================CALLING UI MAINWINDOW")
@@ -18,37 +20,40 @@ class Ui_MainWindow(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/favicon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
-        MainWindow.setStyleSheet("background-color: #E6E6E6;")   
+        MainWindow.setStyleSheet("background-color: #E6E6E6;")
+
+
 
         # self.tabWidget = QtGui.QTabWidget(self.centralwidget)
         self.tabWidget = QtWidgets.QTabWidget(MainWindow)
+
         self.tabWidget.setAutoFillBackground(False)
         self.tabWidget.setStyleSheet("QTabWidget  QTabBar::tab{\n"
-            "background-color: rgb(141, 141, 141);\n"
-            "border-width: 2px;\n"
-            "border-color: #aa0000;\n"
-            "min-width: 12em;\n"
-            "padding: 4px;\n"
-            "color: rgb(255, 255, 255);\n"
-            "height: 30px"
-            "}\n"
-            "\n"
-            "QTabWidget  QTabBar::tab:!selected{\n"
-            "background-color: #E6E6E6;\n"
-            "font: 15px \"Roboto\";\n"
-            "color: #606060;\n"
-            "border-right: 1px solid #D3D3D3;\n"
-            "}\n"
-            "\n"
-            "QTabWidget  QTabBar::tab:selected{\n"
-            "background-color: #EEEEEE;\n"
-            "font: 16px \"Roboto\";\n"
-            "color: #606060;\n"
-            "border-right: 1px solid #D3D3D3;\n"
-            "text-align: center"
-            "}\n"
-            "\n"
-            "") 
+                                     "border-color: #aa0000;\n"
+                                     "min-width: 12em;\n"
+                                     "padding: 4px;\n"
+                                     "color: rgb(255, 255, 255);\n"
+                                     "height: 30px"
+                                     "}\n"
+                                     "\n"
+                                     
+                                     "QTabWidget  QTabBar::tab:!selected{\n"
+                                     "padding-left:50px;\n"
+                                     "background-color: #E6E6E6;\n"
+                                     "font: 15px \"Roboto\";\n"
+                                     "color: #606060;\n"
+                                     "border-right: 1px solid #D3D3D3;\n"
+                                     "}\n"
+                                     "\n"
+                                     "QTabWidget  QTabBar::tab:selected{\n"
+                                     "background-color: #EEEEEE;\n"
+                                     "font: 16px \"Roboto\";\n"
+                                     "color: #606060;\n"
+                                     "border-right: 1px solid #D3D3D3;\n"
+                                     "text-align: center"
+                                     "}\n"
+                                     "\n"
+                                     "")
 
         # self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -69,6 +74,30 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setObjectName("horizontalLayout")
+
+        self.closebutton = QtWidgets.QPushButton("")
+        rMyIcon = QtGui.QPixmap("close.png")
+        # rMyIcon.loadFromData(base64.b64decode(back_d))
+        rMyIcon.setMaximumWidth = 50
+        self.closebutton.setIcon(rMyIcon)
+        self.closebutton.setIconSize(QtCore.QSize(20, 20))
+        self.closebutton.setObjectName("closeBtn")
+        self.closebutton.setMaximumWidth(30)
+        self.closebutton.setStyleSheet(
+            # "margin-left: 600px!important;\n"
+            "\n"
+            "border:none;\n"
+            "position: absolute;\n"
+
+            # "left: 100px;\n"
+
+            "float: right!important; \n"
+            "max-width: 30px!important;\n"
+            "min-width: 30px!important;\n"
+            "padding: 1px;\n"
+            "height: 28px!important;\n"
+            "color: #606060;")
+
         # self.bookMarkCombo = QtGui.QComboBox(self.centralwidget)
         self.bookMarkCombo = QtWidgets.QComboBox()
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Fixed)
@@ -84,28 +113,28 @@ class Ui_MainWindow(object):
         font.setBold(False)
         self.bookMarkCombo.setFont(font)
         self.bookMarkCombo.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-            "font: 8pt \"Roboto\";\n"
-            "border-width: 1px;\n"
-            # "margin-left: 600px!important;\n"
-            "\n"
-            "position: absolute;\n"
-            # "left: 100px;\n"
-            "float: right!important; \n"
-            "max-width: 300px!important;\n"
-            "min-width: 300px!important;\n"
-            "padding: 1px;\n"
-            "height: 22px!important;\n"
-            "border-color: rgb(170, 0, 0);\n"
-            "color: #606060;")
-        self.bookMarkCombo.setEditable(True)
-        #self.bookMarkCombo.setCurrentText("")
+                                         "font: 8pt \"Roboto\";\n"
+                                         "border-width: 1px;\n"
+                                         # "margin-left: 600px!important;\n"
+                                         "\n"
+                                         "position: absolute;\n"
+                                         # "left: 100px;\n"
+                                         "float: right!important; \n"
+                                         "max-width: 300px!important;\n"
+                                         "min-width: 300px!important;\n"
+                                         "padding: 1px;\n"
+                                         "height: 22px!important;\n"
+                                         "border-color: rgb(170, 0, 0);\n"
+                                         "color: #606060;")
+        self.bookMarkCombo.setEditable(False)
+        # self.bookMarkCombo.setCurrentText("")
         self.bookMarkCombo.setFrame(True)
         self.bookMarkCombo.setObjectName("bookMarkCombo")
 
         self.status_txt1 = QtWidgets.QLabel()
         movie = QtGui.QMovie("loading.gif")
         self.status_txt1.setMovie(movie)
-        #movie.start()
+        # movie.start()
         self.status_txt1.setLayout(QtWidgets.QHBoxLayout())
         self.status_txt1.setStyleSheet(
             "border:none;\n"
@@ -121,13 +150,13 @@ class Ui_MainWindow(object):
         print("==================================CALLING UI MAINWINDOW4")
         print("\n")
 
-        width=20
-        self.backbutton=QtWidgets.QPushButton("")
+        width = 20
+        self.backbutton = QtWidgets.QPushButton("")
         rMyIcon = QtGui.QPixmap("back_d.png")
-        #rMyIcon.loadFromData(base64.b64decode(back_d))
-        rMyIcon.setMaximumWidth=50
+        # rMyIcon.loadFromData(base64.b64decode(back_d))
+        rMyIcon.setMaximumWidth = 50
         self.backbutton.setIcon(rMyIcon)
-        self.backbutton.setIconSize(QtCore.QSize(20,20))
+        self.backbutton.setIconSize(QtCore.QSize(20, 20))
         self.backbutton.setObjectName("backBtn")
         self.backbutton.setMaximumWidth(width)
         self.backbutton.setStyleSheet(
@@ -135,7 +164,7 @@ class Ui_MainWindow(object):
             "\n"
             "border:none;\n"
             "position: absolute;\n"
-            
+
             # "left: 100px;\n"
 
             "float: right!important; \n"
@@ -144,16 +173,14 @@ class Ui_MainWindow(object):
             "padding: 1px;\n"
             "height: 28px!important;\n"
             "color: #606060;")
-        
 
         self.horizontalLayout.addWidget(self.backbutton)
 
-
-        self.fwbutton=QtWidgets.QPushButton("")
-        self.fwbutton.isFlat=True
+        self.fwbutton = QtWidgets.QPushButton("")
+        self.fwbutton.isFlat = True
         rMyIcon = QtGui.QPixmap("forward_d.png")
         self.fwbutton.setIcon((rMyIcon))
-        self.fwbutton.setIconSize(QtCore.QSize(20,20))
+        self.fwbutton.setIconSize(QtCore.QSize(20, 20))
         self.fwbutton.setObjectName("fwBtn")
         self.fwbutton.setMaximumWidth(width)
         self.fwbutton.setStyleSheet(
@@ -168,11 +195,13 @@ class Ui_MainWindow(object):
             "min-width: 20px!important;\n"
             "padding: 1px;\n"
             "height: 22px!important;\n"
-            )
+        )
         self.horizontalLayout.addWidget(self.fwbutton)
-        
-        
-        self.horizontalLayout.addWidget( self.bookMarkCombo)
+
+        self.horizontalLayout.addWidget(self.bookMarkCombo)
+
+        self.horizontalLayout.addWidget(self.closebutton)
+
         # self.label_provImage = QtGui.QLabel(self.centralwidget)
         self.label_provImage = QtWidgets.QLabel(self.centralwidget)
         self.label_provImage.setEnabled(True)
@@ -181,14 +210,14 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.label_provImage.sizePolicy().hasHeightForWidth())
         self.label_provImage.setSizePolicy(sizePolicy)
-        #self.label_provImage.setMinimumSize(QtCore.QSize(100, 2000))
+        # self.label_provImage.setMinimumSize(QtCore.QSize(100, 2000))
         self.label_provImage.setMaximumSize(QtCore.QSize(150, 3500))
         font = QtGui.QFont()
         self.label_provImage.setFont(font)
         self.label_provImage.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.label_provImage.setStyleSheet("")
         self.label_provImage.setText("")
-        #self.label_provImage.setPixmap(QtGui.QPixmap("icons/ProvLogoMain.png"))
+        # self.label_provImage.setPixmap(QtGui.QPixmap("icons/ProvLogoMain.png"))
         self.label_provImage.show()
         self.label_provImage.setAlignment(QtCore.Qt.AlignCenter)
         self.label_provImage.setWordWrap(True)
@@ -227,7 +256,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setStretch(1, 2)
         self.horizontalLayout.setStretch(2, 1)
         # self.gridLayout.addLayout(self.horizontalLayout, 0, 0, 1, 1)
-        
+
         self.tabWidget.setElideMode(QtCore.Qt.ElideMiddle)
         self.tabWidget.setObjectName("tabWidget")
         self.test_console = QtWidgets.QWidget()
@@ -256,7 +285,7 @@ class Ui_MainWindow(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setReadOnly(True)
         self.lineEdit.setObjectName("lineEdit")
-        #self.formLayout.setWidget(0, QtGui.QFormLayout.SpanningRole, self.lineEdit)
+        # self.formLayout.setWidget(0, QtGui.QFormLayout.SpanningRole, self.lineEdit)
         self.tabWidget.addTab(self.search_option, "")
         self.gridLayout.addWidget(self.tabWidget, 1, 0, 1, 1)
         # MainWindow.setCentralWidget(self.centralwidget)
@@ -274,7 +303,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         self.bookMarkCombo.setCurrentIndex(-1)
         self.tabWidget.setCurrentIndex(1)
-        #QtCore.QObject.connect(self.tabWidget, QtCore.SIGNAL("currentChanged(int)"), self.tabWidget.setCurrentIndex)
+        # QtCore.QObject.connect(self.tabWidget, QtCore.SIGNAL("currentChanged(int)"), self.tabWidget.setCurrentIndex)
         self.tabWidget.currentChanged.connect(self.tabWidget.setCurrentIndex)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.tabWidget.setCornerWidget(self.corner_widget)
@@ -284,9 +313,12 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtWidgets.QApplication.translate("MainWindow", "MainWindow", None))
         # self.Quit.setText(QtGui.QApplication.translate("MainWindow", "", None, QtGui.QApplication.UnicodeUTF8))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.test_console), QtWidgets.QApplication.translate("MainWindow", "Test Console", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.test_console),
+                                  QtWidgets.QApplication.translate("MainWindow", "Test Console", None))
+
         self.lineEdit.setText(QtWidgets.QApplication.translate("MainWindow", "Look Here For Help", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.search_option), QtWidgets.QApplication.translate("MainWindow", "Search Option", None))
-    
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.search_option),
+                                  QtWidgets.QApplication.translate("MainWindow", "Search Option", None))
+
     def get_push_button_path(self):
-        return "{}{}img{}cross.png".format(os.getcwd(),os.sep, os.sep)
+        return "{}{}img{}cross.png".format(os.getcwd(), os.sep, os.sep)

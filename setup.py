@@ -31,11 +31,11 @@ setup(name='ProvLock',
      description = 'First Release',
      options = dict(build_exe = buildOptions),
      executables = [
-   Executable('testForm.py',shortcutName="ProvLock",
-           shortcutDir="DesktopFolder"
+   Executable('testForm.py', shortcutName="ProvLock",
+              shortcutDir="DesktopFolder"
 
-           #,base=base
-           , icon=".\\icons\\favicon.ico")
+              #,base=base
+              , icon=".\\icons\\favicon.ico", requires=['PySide2'])
 ])
 '''
 import sys
