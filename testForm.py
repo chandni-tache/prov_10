@@ -96,7 +96,7 @@ import socket
 from PySide2 import QtCore, QtGui
 from functools import partial
 from PySide2 import QtXml
-import pyHook
+#import pyHook
 from key_window import key_dict_windows
 import PySide2
 from PySide2.QtWidgets import *
@@ -945,13 +945,13 @@ class MainWindow(QMainWindow):
         self.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)  # added by RSR
         self.activateWindow()
         # create a hook manager
-        hm = pyHook.HookManager()
-        print('hm is:{}'.format(hm))
+        # hm = pyHook.HookManager()
+        # print('hm is:{}'.format(hm))
         # watch for all keyboard events
-        hm.KeyDown = self.OnKeyboardEvent
+        # hm.KeyDown = self.OnKeyboardEvent
         # set the hook
         # print ("hm.KeyDown:{}".format(hm.KeyDown))
-        hm.HookKeyboard()
+        # hm.HookKeyboard()
         # self.uiMwin.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)
         # self.tab3  = QtGui.QWidget()
         # self.tabWidget.addTab(tab3,"Other's")
