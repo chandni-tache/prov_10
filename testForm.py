@@ -884,29 +884,19 @@ class MainWindow(QMainWindow):
 
         self.vBoxTest = QtWidgets.QVBoxLayout()
         # self.fBoxSearch  = QtGui.QFormLayout()
-
         # vBoxlayout.addWidget(pushButton2)
         self.vBoxTest.addWidget(self.webTest)
-
         # self.fBoxSearch.addWidget(self.uiMwin.lineEdit)
         # self.fBoxSearch.addWidget(self.webSearch)
         self.uiMwin.tabWidget.setCurrentIndex(0)
         # self.fBoxSearch.addRow(self.uiMwin.lineEdit)
-
-        #self.uiMwin.formLayout.addRow(self.webSearch)
+        # self.uiMwin.formLayout.addRow(self.webSearch)
         # self.fBoxSearch.addRow(self.webSearch)
-        #self.uiMwin.search_option.setLayout(self.uiMwin.formLayout)
+        # self.uiMwin.search_option.setLayout(self.uiMwin.formLayout)
         self.uiMwin.test_console.setLayout(self.vBoxTest)
-
         self.vBoxSearch = QtWidgets.QVBoxLayout()
         self.vBoxSearch.addWidget(self.webSearch)
         self.uiMwin.search_option.setLayout(self.vBoxSearch)
-
-
-
-
-
-
         self.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)  # added by RSR
         self.activateWindow()
         # create a hook manager
@@ -917,7 +907,6 @@ class MainWindow(QMainWindow):
         # set the hook
         # print ("hm.KeyDown:{}".format(hm.KeyDown))
         hm.HookKeyboard()
-
         # self.uiMwin.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)
         # self.tab3  = QtGui.QWidget()
         # self.tabWidget.addTab(tab3,"Other's")
