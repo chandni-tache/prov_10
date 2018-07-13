@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e167fc33-9d48-47c3-b0d8-fe86fba664e4" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessCodeForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/accessCodeForm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/testForm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testFormVer_BColor.py" beforeDir="false" afterPath="$PROJECT_DIR$/testFormVer_BColor.py" afterDir="false" />
     </list>
@@ -21,8 +18,8 @@
       <file leaf-file-name="testForm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testForm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="1750" column="36" selection-start-line="1750" selection-start-column="36" selection-end-line="1750" selection-end-column="36" />
+            <state relative-caret-position="312">
+              <caret line="904" lean-forward="true" selection-start-line="904" selection-end-line="904" />
               <folding>
                 <element signature="e#133#143#0" expanded="true" />
               </folding>
@@ -30,20 +27,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Signal.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1734969703/PySide2/QtCore/Signal.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="testFormVer_BColor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testFormVer_BColor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="266" lean-forward="true" selection-start-line="266" selection-end-line="266" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NetworkAccess</find>
-      <find>finished</find>
-      <find>NEWWEB</find>
-      <find>Networ</find>
-      <find>NEW</find>
       <find>onLoadFInished</find>
       <find>self.webtest</find>
       <find>QWEbEngineView</find>
@@ -65,10 +61,15 @@
       <find>super(NEW</find>
       <find>IG</find>
       <find>check_inter</find>
-      <find>timer</find>
       <find>ip</find>
       <find>def ip</find>
       <find>Network</find>
+      <find>self.webTest =</find>
+      <find>self.linedit</find>
+      <find>linedit</find>
+      <find>timer</find>
+      <find>test</find>
+      <find>self.test_console</find>
     </findStrings>
     <replaceStrings>
       <replace>PyQt5</replace>
@@ -110,7 +111,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,6 +122,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -242,12 +243,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24304539" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50073206" side_tool="true" weight="0.66931635" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3290938" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.37360892" />
@@ -261,25 +260,26 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.24304539" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="1.0" />
-      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3290938" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3990461" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3290938" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3290938" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3290938" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -295,13 +295,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testForm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15453">
-          <caret line="909" column="37" lean-forward="true" selection-start-line="909" selection-start-column="37" selection-end-line="909" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup2.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -573,20 +566,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding>
-            <element signature="e#247#256#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1734969703/PySide2/QtNetwork/QNetworkRequest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#166#207#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1734969703/PySide2/QtWebEngineWidgets.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -602,20 +586,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testFormVer_BColor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="59" column="68" selection-start-line="59" selection-start-column="68" selection-end-line="59" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1734969703/PySide2/QtCore/Signal.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1734969703/PySide2/QtWidgets/QMessageBox.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="109" column="8" selection-start-line="109" selection-start-column="8" selection-end-line="109" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testFormVer_BColor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="266" lean-forward="true" selection-start-line="266" selection-end-line="266" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testForm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="1750" column="36" selection-start-line="1750" selection-start-column="36" selection-end-line="1750" selection-end-column="36" />
+        <state relative-caret-position="312">
+          <caret line="904" lean-forward="true" selection-start-line="904" selection-end-line="904" />
           <folding>
             <element signature="e#133#143#0" expanded="true" />
           </folding>

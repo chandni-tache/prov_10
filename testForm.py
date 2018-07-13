@@ -703,7 +703,7 @@ class MainWindow(QMainWindow):
         # print("value of item is: {}".format(item))
         # text = item[index+1]["url"]
         # self.uiMwin.tabWidget.setTabText(1,"HELP")
-        #self.uiMwin.tabWidget.setCurrentIndex(1)
+        # self.uiMwin.tabWidget.setCurrentIndex(1)
         # self.uiMwin.lineEdit.setText(text)
         # self.webSearch = QWebView()
         # self.webSearch.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
@@ -715,7 +715,7 @@ class MainWindow(QMainWindow):
         return False
         # self.webSearch.load(QUrl(self.urlSearch))
         # self.vBoxSearch  = QtGui.QVBoxLayout()
-        #print("reach in urlSearch is: {}".format(self.urlSearch))
+        # print("reach in urlSearch is: {}".format(self.urlSearch))
         # self.vBoxSearch.addWidget(self.lineEdit)
         # self.vBoxSearch.addWidget(self.webSearch)
         # self.search_option.setLayout(self.vBoxSearch)
@@ -776,8 +776,8 @@ class MainWindow(QMainWindow):
             msg.show()
             return True
 
-    def check_inter(self,paasd):
-        print(":::CHECKING PAASD",paasd,"\n\n")
+    def check_inter(self, paasd):
+        print(":::CHECKING PAASD", paasd, "\n\n")
         if paasd:
             return False
         for i in range(1):
@@ -814,7 +814,6 @@ class MainWindow(QMainWindow):
         # self.setSizeGripEnabled(False)
         self.resize(200, 300)
 
-
         """
         self.mkDirForScreenCapture()
         self.timer = QTimer()
@@ -830,12 +829,12 @@ class MainWindow(QMainWindow):
         self.stimer1.setInterval(4000)
         self.stimer1.timeout.connect(st,88)
         self.stimer1.start()
-        
+
         self.stimer = QTimer()
         self.stimer.setInterval(5000)
         self.stimer.timeout.connect(self.check_external_storage)
         self.stimer.start()
-        
+
 """
         # self.uiMwin.lineEdit.textChanged.connect(self.line_edit_text_changed)
         # self.uiMwin.Quit.clicked.connect(self.close)
@@ -868,7 +867,6 @@ class MainWindow(QMainWindow):
         # self.webTest = CusTomWebview(CONFIG_OPTIONS,self.uiMwin,False)
         self.webTest = NewWebView(CONFIG_OPTIONS, self.uiMwin, False)
 
-
         self.uiMwin.closebutton.clicked.connect(self.close)
         # self.webTest.loadFinished.connect(self.webTest.)
         # self.webTest.connect(self.webTest, SIGNAL('loadFinished(bool)'), self.loadFinished)
@@ -895,10 +893,20 @@ class MainWindow(QMainWindow):
         self.uiMwin.tabWidget.setCurrentIndex(0)
         # self.fBoxSearch.addRow(self.uiMwin.lineEdit)
 
-        self.uiMwin.formLayout.addRow(self.webSearch)
+        #self.uiMwin.formLayout.addRow(self.webSearch)
         # self.fBoxSearch.addRow(self.webSearch)
-        self.uiMwin.search_option.setLayout(self.uiMwin.formLayout)
+        #self.uiMwin.search_option.setLayout(self.uiMwin.formLayout)
         self.uiMwin.test_console.setLayout(self.vBoxTest)
+
+        self.vBoxSearch = QtWidgets.QVBoxLayout()
+        self.vBoxSearch.addWidget(self.webSearch)
+        self.uiMwin.search_option.setLayout(self.vBoxSearch)
+
+
+
+
+
+
         self.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)  # added by RSR
         self.activateWindow()
         # create a hook manager
@@ -921,10 +929,12 @@ class MainWindow(QMainWindow):
 
     def ip(self):
         print("STARTING.....")
-        self.networkThread=NetworkThread(self)
+        self.networkThread = NetworkThread(self)
         print("STARTING.....edfdgdf")
+
         def prif(**kwargs):
-            print("NO INTERNET",kwargs,"\n\n")
+            print("NO INTERNET", kwargs, "\n\n")
+
         self.networkThread.connected.connect(prif)
         print("STARTING.....dsouhfisdf")
         self.networkThread.run()
@@ -953,7 +963,7 @@ class MainWindow(QMainWindow):
                 # self.uiMwin.bookMarkCombo.addItem(value[val][i])
         # self.webTest.loadFinished.connect(self.onLoadFinished)
         self.webSearch.load(value[1][0]['value'])
-        #self.uiMwin.tabWidget.setCurrentIndex(1)
+        # self.uiMwin.tabWidget.setCurrentIndex(1)
 
     def onLoadFinished(self):
         print("valuein loadFinished till page not load\n")
@@ -1626,18 +1636,16 @@ class NewWebView(QWebEngineView):
             self.uiMwin.backbutton.clicked.connect(self.bacl)
             self.uiMwin.fwbutton.clicked.connect(self.fwcl)
 
-
     def fwcl(self):
         self.uiMwin.tabWidget.setCurrentIndex(1)
         self.forward()
-
 
     def bacl(self):
         self.uiMwin.tabWidget.setCurrentIndex(1)
         self.back()
 
-    def donelo(self,ok, *args, **kwargs):
-        print("OK,ok",ok,"\n\n",*args,**kwargs)
+    def donelo(self, ok, *args, **kwargs):
+        print("OK,ok", ok, "\n\n", *args, **kwargs)
         if self.change:
             self.uiMwin.status_txt1.hide()
             if self.page().action(QWebEnginePage.Back).isEnabled():
@@ -1726,11 +1734,10 @@ class NewNM(PySide2.QtNetwork.QNetworkAccessManager):
             PySide2.QtNetwork.QNetworkRequest.HttpStatusCodeAttribute
         )
         # track the URLs that failed
-        print("STATUS IS :::",status,"\n\n")
+        print("STATUS IS :::", status, "\n\n")
 
 
 class checkIThread(QtCore.QThread):
-
     done = PySide2.QtCore.Signal(bool)
 
     def __init__(self):
@@ -1749,16 +1756,18 @@ class checkIThread(QtCore.QThread):
 
 
 class NetworkThread(QtCore.QThread):
-    connected=QtCore.Signal(bool)
+    connected = QtCore.Signal(bool)
 
     def run(self, *args, **kwargs):
         print("RUNNING")
         try:
-            a=socket.create_connection(("google.com",80))
+            a = socket.create_connection(("google.com", 80))
         except Exception as e:
             self.emit(bytes())
             print("No Internet")
             print(e)
+
+
 # ######## Main application code begins here ################## #
 
 
@@ -1925,13 +1934,15 @@ if __name__ == "__main__":
     mainwin.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)
     mainwin.setWindowTitle("PROVLOCK")
     app.installEventFilter(mainwin)
-    #mainwin.showFullScreen()
+    # mainwin.showFullScreen()
     # mainwin.setSizePolicy()
     mainwin.setMouseTracking(True)
     mainwin.resize(300, 300)
     mainwin.show()
 
     sys._excepthook = sys.excepthook
+
+
     def my_exception_hook(exctype, value, traceback):
         # Print the error and traceback
         print(exctype, value, traceback)

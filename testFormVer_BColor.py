@@ -259,6 +259,7 @@ class Ui_MainWindow(object):
 
         self.tabWidget.setElideMode(QtCore.Qt.ElideMiddle)
         self.tabWidget.setObjectName("tabWidget")
+
         self.test_console = QtWidgets.QWidget()
         self.test_console.setStyleSheet("background-color: rgb(255, 255, 255);")
         self.test_console.setObjectName("test_console")
@@ -269,8 +270,10 @@ class Ui_MainWindow(object):
         self.search_option.setObjectName("search_option")
 
         # self.tabWidget.setCornerWidget(self.Quit)
-        self.formLayout = QtWidgets.QFormLayout(self.search_option)
+        #self.formLayout = QtWidgets.QFormLayout(self.search_option)
+        self.formLayout = QtWidgets.QFormLayout()
         self.formLayout.setObjectName("formLayout")
+
         self.lineEdit = QtWidgets.QLineEdit()
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -285,7 +288,8 @@ class Ui_MainWindow(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setReadOnly(True)
         self.lineEdit.setObjectName("lineEdit")
-        # self.formLayout.setWidget(0, QtGui.QFormLayout.SpanningRole, self.lineEdit)
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.SpanningRole, self.lineEdit)
+
         self.tabWidget.addTab(self.search_option, "")
         self.gridLayout.addWidget(self.tabWidget, 1, 0, 1, 1)
         # MainWindow.setCentralWidget(self.centralwidget)
@@ -316,7 +320,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.test_console),
                                   QtWidgets.QApplication.translate("MainWindow", "Test Console", None))
 
-        self.lineEdit.setText(QtWidgets.QApplication.translate("MainWindow", "Look Here For Help", None))
+        #self.lineEdit.setText(QtWidgets.QApplication.translate("MainWindow", "Look Here For Help", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.search_option),
                                   QtWidgets.QApplication.translate("MainWindow", "Search Option", None))
 
