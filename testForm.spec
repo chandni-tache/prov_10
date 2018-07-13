@@ -4,10 +4,10 @@ block_cipher = None
 
 
 a = Analysis(['testForm.py'],
-             pathex=['C:\\Users\\super\\Desktop\\PROV_WINDOWS\\provlock_windows_new'],
+             pathex=['C:\\Users\\Tache\\Desktop\\Prov'],
              binaries=[],
              datas=[],
-             hiddenimports=[],
+             hiddenimports=['encodings'],
              hookspath=[],
              runtime_hooks=[],
              excludes=[],
@@ -23,7 +23,7 @@ exe = EXE(pyz,
           debug=False,
           strip=False,
           upx=True,
-          console=False )
+          console=True )
 coll = COLLECT(exe,
                a.binaries,
                a.zipfiles,

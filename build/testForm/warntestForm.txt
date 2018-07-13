@@ -1,0 +1,34 @@
+missing module named 'PyQt5.QtCore' - imported by C:\Python37\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_qt5plugins.py
+missing module named PyQt5 - imported by C:\Python37\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_qt5plugins.py
+missing module named sip - imported by C:\Python37\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_qt5plugins.py
+missing module named 'multiprocessing.forking' - imported by C:\Python37\lib\site-packages\PyInstaller\loader\rthooks\pyi_rth_multiprocessing.py
+missing module named multiprocessing.get_context - imported by multiprocessing, multiprocessing.pool, multiprocessing.managers, multiprocessing.sharedctypes
+missing module named multiprocessing.TimeoutError - imported by multiprocessing, multiprocessing.pool
+missing module named multiprocessing.BufferTooShort - imported by multiprocessing, multiprocessing.connection
+missing module named multiprocessing.AuthenticationError - imported by multiprocessing, multiprocessing.connection
+missing module named multiprocessing.set_start_method - imported by multiprocessing, multiprocessing.spawn
+missing module named multiprocessing.get_start_method - imported by multiprocessing, multiprocessing.spawn
+missing module named resource - imported by posix, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named posix - imported by os, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named _posixsubprocess - imported by subprocess, multiprocessing.util, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named org - imported by pickle, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named readline - imported by cmd, code, pdb, C:\Users\Tache\Desktop\Prov\testForm.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named _winreg - imported by platform, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named _scproxy - imported by urllib.request
+missing module named java - imported by platform, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named 'java.lang' - imported by platform, C:\Users\Tache\Desktop\Prov\testForm.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named termios - imported by tty, C:\Users\Tache\Desktop\Prov\testForm.py, getpass
+missing module named grp - imported by shutil, tarfile, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named 'org.python' - imported by copy, C:\Users\Tache\Desktop\Prov\testForm.py, xml.sax
+missing module named pwd - imported by posixpath, shutil, tarfile, http.server, webbrowser, C:\Users\Tache\Desktop\Prov\testForm.py, netrc, getpass
+missing module named __builtin__ - imported by pyHook.cpyHook
+missing module named urllib3 - imported by C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named multiprocessing.Queue - imported by multiprocessing, C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named requests - imported by C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named psutil - imported by C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named yaml - imported by C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named tzlocal - imported by C:\Users\Tache\Desktop\Prov\testForm.py
+missing module named keyboard - imported by C:\Users\Tache\Desktop\Prov\testForm.py

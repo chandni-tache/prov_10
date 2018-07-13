@@ -312,6 +312,20 @@ class NumOfAppOpen(QMessageBox):
                 # sys.exit(1)
 
 
+class NetThread(QThread):
+
+    offline=QtCore.Signal(object)
+
+    def run(self, *args, **kwargs):
+        while True:
+            try:
+                a = socket.create_connection(("google.com", 80))
+            except Exception as e:
+                self.offline.emit([True])
+            time.sleep(4)
+
+
+
 class AccessCode(QDialog):
     # Temporary
     accessCode = []
@@ -776,6 +790,7 @@ class MainWindow(QMainWindow):
             return True
 
     def check_inter(self):
+        return True
         print(":::CHECKING PAASD", "\n\n")
         try:
             a = socket.create_connection(("google.com", 80))
@@ -804,8 +819,19 @@ class MainWindow(QMainWindow):
         self.in_wokrer.moveToThread(self.thread)
         self.thread.start()
 
-    def pp(self,*args,**kwargs):
-        print(args,kwargs,"\n\nPRINTING THREAD OUTPUT")
+    @QtCore.Slot(object)
+    def printf(self,*args,**kwargs):
+        print("NO INTERNET , THREAD WORKING INETFGARTION TEST",args,kwargs)
+        self.msg_net = QMessageBox()
+        self.msg_net.setIcon(QMessageBox.Warning)
+        self.msg_net.setInformativeText("No Internet")
+        self.msg_net.setWindowTitle("ERROR!!!")
+        self.msg_net.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)  # added by RSR
+        # msg.setDetailedText("The details are as follows:")
+        self.msg_net.setStandardButtons(QMessageBox.Ok)
+        self.msg_net.setText("Ther is no internet conncection ")
+        self.msg_net.show()
+
     def build_ui(self, options):
         """Set up the user interface for the main window.
 
@@ -828,7 +854,9 @@ class MainWindow(QMainWindow):
         # self.setSizeGripEnabled(False)
         self.resize(200, 300)
 
-
+        self.thread = NetThread(self)
+        self.thread.offline.connect(self.printf)
+        self.thread.start()
         """
         #self.mkDirForScreenCapture()
         self.timer = QTimer()
@@ -1943,7 +1971,7 @@ if __name__ == "__main__":
     # mainwin.showFullScreen()
     # mainwin.setSizePolicy()
     mainwin.setMouseTracking(True)
-    mainwin.resize(300, 300)
+    mainwin.resize(900 , 900)
     mainwin.show()
 
     sys._excepthook = sys.excepthook
