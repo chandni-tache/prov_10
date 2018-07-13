@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e167fc33-9d48-47c3-b0d8-fe86fba664e4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/testForm.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="testForm.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testForm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="893" column="48" lean-forward="true" selection-start-line="893" selection-start-column="48" selection-end-line="893" selection-end-column="48" />
+            <state relative-caret-position="193">
+              <caret line="773" column="17" selection-start-line="773" selection-start-column="17" selection-end-line="773" selection-end-column="17" />
               <folding>
                 <element signature="e#133#143#0" expanded="true" />
               </folding>
@@ -30,28 +29,16 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>MAInWINDOW(</find>
-      <find>thread</find>
-      <find>837</find>
-      <find>process_inter</find>
-      <find>Thread</find>
-      <find>setCurre</find>
-      <find>self.websearch</find>
-      <find>test_console</find>
-      <find>self.corner</find>
-      <find>self.tabWid</find>
       <find>Test console</find>
       <find>self.test</find>
       <find>super(NEW</find>
       <find>IG</find>
-      <find>check_inter</find>
       <find>ip</find>
       <find>def ip</find>
       <find>Network</find>
       <find>self.webTest =</find>
       <find>self.linedit</find>
       <find>linedit</find>
-      <find>timer</find>
       <find>test</find>
       <find>self.test_console</find>
       <find>AccessCode</find>
@@ -59,7 +46,19 @@
       <find>MainWindow(</find>
       <find>jsondata</find>
       <find>Access</find>
+      <find>socket.</find>
+      <find>Worker</find>
       <find>build_ui</find>
+      <find>check_inter</find>
+      <find>socket.cre</find>
+      <find>socket</find>
+      <find>self.process</find>
+      <find>process_exists</find>
+      <find>OPTIONS PROCESS</find>
+      <find>self.apk</find>
+      <find>sys.exit</find>
+      <find>timer</find>
+      <find>check_external_storage</find>
     </findStrings>
     <replaceStrings>
       <replace>PyQt5</replace>
@@ -240,7 +239,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50073206" side_tool="true" weight="0.66931635" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3290938" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.37360892" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49926794" visible="true" weight="0.37360892" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.71224165" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -286,9 +285,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/setup2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
@@ -594,10 +590,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/1734969703/PySide2/QtCore/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="120" column="4" selection-start-line="120" selection-start-column="4" selection-end-line="120" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testForm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="893" column="48" lean-forward="true" selection-start-line="893" selection-start-column="48" selection-end-line="893" selection-end-column="48" />
+        <state relative-caret-position="193">
+          <caret line="773" column="17" selection-start-line="773" selection-start-column="17" selection-end-line="773" selection-end-column="17" />
           <folding>
             <element signature="e#133#143#0" expanded="true" />
           </folding>

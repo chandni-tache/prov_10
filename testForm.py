@@ -501,7 +501,7 @@ class AccessCode(QDialog):
 from PySide2.QtWidgets import *
 from PySide2 import QtWidgets
 from PySide2 import QtCore
-
+import time
 
 class MainWindow(QMainWindow):
     """This is the main application window class
@@ -729,11 +729,12 @@ class MainWindow(QMainWindow):
             return True
 
     def process_exists(self):
-        if self.listApp == None:
+        if not self.listApp:
             self.listApp = []
             print("\n=====================OPTIONS PROCESS")
             print("\n", config)
-            apps = config.get("Restrictions").items()[1][1]
+            apps = config["Restrictions"]["APPLICATION"]
+            print(apps)
             for a1 in apps:
                 self.listApp.append(a1.get("value").lower())
             print("\n\n=========")
@@ -741,16 +742,15 @@ class MainWindow(QMainWindow):
         # listApp = ['chrome.exe','firefox.exe','Skype.exe', 'TeamViewer.exe', 'LyncMonitor.exe']
         for proc in psutil.process_iter():
             if proc.name().lower() in self.listApp:
-                msg = QMessageBox()
-                msg.setIcon(QMessageBox.Warning)
-                msg.setInformativeText("The Application will be closed forcefully")
-                msg.setWindowTitle("ERROR!!!")
-                msg.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)  # added by RSR
+                self.proc_msg = QMessageBox()
+                self.proc_msg.setIcon(QMessageBox.Warning)
+                self.proc_msg.setInformativeText("The Application will be closed forcefully")
+                self.proc_msg.setWindowTitle("ERROR!!!")
+                self.proc_msg.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)  # added by RSR
                 # msg.setDetailedText("The details are as follows:")
-                msg.setStandardButtons(QMessageBox.Ok)
-                msg.setText("Looks like  application {} is Open".format(proc.name().upper()))
-                msg.show()
-                msg.show()
+                self.proc_msg.setStandardButtons(QMessageBox.Ok)
+                self.proc_msg.setText("Looks like  application {} is Open".format(proc.name().upper()))
+                self.proc_msg.show()
                 try:
                     proc.terminate()
                 except:
@@ -764,23 +764,27 @@ class MainWindow(QMainWindow):
         stdout, stderr = usb_proc.communicate()
         new_devices = re.findall(pattern, str(stdout))
         if new_devices > DEVICES:
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Warning)
-            msg.setInformativeText("Kindly remove the external device")
-            msg.setWindowTitle("ERROR!!!")
-            msg.setWindowFlags(self.windowFlags() | Qt.WindowStaysOnTopHint)  # added by RSR
+            self.msg_device = QMessageBox()
+            self.msg_device.setIcon(QMessageBox.Warning)
+            self.msg_device.setInformativeText("Kindly remove the external device")
+            self.msg_device.setWindowTitle("ERROR!!!")
+            self.msg_device.setWindowFlags(self.msg_device.windowFlags() | Qt.WindowStaysOnTopHint)  # added by RSR
             # msg.setDetailedText("The details are as follows:")
-            msg.setStandardButtons(QMessageBox.Ok)
-            msg.setText("Looks like you have plugged in an external device")
-            msg.show()
-            msg.show()
+            self.msg_device.setStandardButtons(QMessageBox.Ok)
+            self.msg_device.setText("Looks like you have plugged in an external device")
+            self.msg_device.show()
             return True
 
-    def check_inter(self, paasd):
-        print(":::CHECKING PAASD", paasd, "\n\n")
-        if paasd:
-            return False
-        for i in range(1):
+    def check_inter(self):
+        print(":::CHECKING PAASD", "\n\n")
+        try:
+            a = socket.create_connection(("google.com", 80))
+            try:
+                self.msg_net.done(1)
+            except Exception as e:
+                print("MSG NET ",e)
+        except Exception as e:
+            print(e)
             self.msg_net = QMessageBox()
             self.msg_net.setIcon(QMessageBox.Warning)
             self.msg_net.setInformativeText("No Internet")
@@ -792,6 +796,16 @@ class MainWindow(QMainWindow):
             self.msg_net.show()
             print(e)
 
+    def setUP_checker_inter(self):
+        self.in_wokrer=Worker()
+        self.thread=QThread()
+
+        self.in_wokrer.no_internet.connect(self.pp)
+        self.in_wokrer.moveToThread(self.thread)
+        self.thread.start()
+
+    def pp(self,*args,**kwargs):
+        print(args,kwargs,"\n\nPRINTING THREAD OUTPUT")
     def build_ui(self, options):
         """Set up the user interface for the main window.
 
@@ -814,20 +828,24 @@ class MainWindow(QMainWindow):
         # self.setSizeGripEnabled(False)
         self.resize(200, 300)
 
+
         """
-        self.mkDirForScreenCapture()
+        #self.mkDirForScreenCapture()
         self.timer = QTimer()
         self.timer.start(10000)
         #t.timeout.connect(self.getRelativeFrameGeometry)
         self.timer.timeout.connect(self.screenCaptureWidget)
         #self.dragMoveEvent()
+        """
+
         self.apptimer = QTimer()
-        self.apptimer.setInterval(20000)
+        self.apptimer.setInterval(5000)
         self.apptimer.timeout.connect(self.process_exists)
         self.apptimer.start()
+
         self.stimer1 = QTimer()
-        self.stimer1.setInterval(4000)
-        self.stimer1.timeout.connect(st,88)
+        self.stimer1.setInterval(5000)
+        self.stimer1.timeout.connect(self.check_inter)
         self.stimer1.start()
 
         self.stimer = QTimer()
@@ -835,7 +853,6 @@ class MainWindow(QMainWindow):
         self.stimer.timeout.connect(self.check_external_storage)
         self.stimer.start()
 
-"""
         # self.uiMwin.lineEdit.textChanged.connect(self.line_edit_text_changed)
         # self.uiMwin.Quit.clicked.connect(self.close)
         # self.accessCode.uiAc.pushButtonSubmit.clicked.connect(self.loadBookMarksAndBrowser)
